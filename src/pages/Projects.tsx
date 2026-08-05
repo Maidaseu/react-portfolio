@@ -1,18 +1,17 @@
 import Section from "../components/Section";
 import ProjectCard from "../components/ProjectCard";
+import { projects } from "../data/projects";
 
 export default function Projects() {
   return (
     <Section title="Projects">
-      <ProjectCard
-        title="Pomodoro Tracker"
-        description="A productivity application built with Flask and Python."
-      />
-
-      <ProjectCard
-        title="React Portfolio"
-        description="My developer portfolio built with React and TypeScript."
-      />
+      {projects.map((project) => (
+        <ProjectCard
+          key={project.id}
+          title={project.title}
+          description={project.description}
+        />
+      ))}
     </Section>
   );
 }
